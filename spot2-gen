@@ -1,0 +1,22 @@
+#!/usr/bin/env php7.0
+<?php
+include "vendor/autoload.php";
+
+
+use Spot2Generator\core\code\Argv;
+use Spot2Generator\Generator;
+
+$argv = new Argv($argv);
+
+$gen = new Generator();
+$gen->basePath($argv->getParam('dir', getcwd()));
+$gen->setParams($argv->getParamList());
+
+$class = $argv->getParam('class');
+$table = $argv->getParam('table');
+if (!$table) {
+    echo $gen->help();
+    exit();
+}
+
+$gen->entity($table, $class);

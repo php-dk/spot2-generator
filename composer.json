@@ -1,0 +1,34 @@
+{
+  "name": "toolsphp/spot2-generator",
+  "description": "spot2 code generator.",
+  "license": "MIT",
+  "keywords": [
+    "Tools Spot2 generator"
+  ],
+  "authors": [
+    {
+      "name": "Dima",
+      "email": "dimajolkin@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "vlucas/spot2": "2.2.0",
+    "doctrine/dbal": "2.5.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "5.4"
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit  -c ./phpunit.xml"
+  },
+  "autoload": {
+    "psr-4": {
+      "Spot2Generator\\": "src",
+      "Spot2Generator\\tests\\": "tests"
+    }
+  },
+  "bin": [
+    "spot2-gen"
+  ]
+}
